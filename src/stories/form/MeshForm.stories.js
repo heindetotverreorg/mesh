@@ -6,6 +6,7 @@ import { email } from '../../validators/email'
 import { nonumber } from '../../validators/nonumbers'
 import { issamevalue } from '../../validators/issamevalue'
 import { slug } from '../../validators/slug'
+import { nospecialchar } from '../../validators/nospecialchar'
 
 const content = (type, key) => contentMock[type]?.[key]
 
@@ -21,6 +22,9 @@ const getForm = (formKey, errorState) => {
       }
       if (field.key === 'passwordCheck') {
         field.validators = [issamevalue, nonumber]
+      }
+      if (field.key === 'specialchar') {
+        field.validators = [nospecialchar]
       }
       if (field.key === 'firstName' || field.key === 'lastName') {
         field.validators = [nonumber]

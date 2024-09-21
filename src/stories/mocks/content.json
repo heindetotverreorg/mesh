@@ -5,6 +5,7 @@
     "passwordCheck": "Password again",
     "firstName": "First name",
     "lastName": "Last name",
+    "specialchar": "No special character",
     "checkBox": "Checkbox",
     "select": "Select a number",
     "slug": "Enter a slug",

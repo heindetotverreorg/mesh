@@ -1,7 +1,7 @@
 import { email } from "./email"
 import { notempty } from "./notempty"
 import { nonumber } from "./nonumbers"
-import { specialchar } from "./specialchar"
+import { nospecialchar } from "./nospecialchar"
 import { minlength } from "./minlength"
 import { issamevalue } from './issamevalue'
 import { slug } from "./slug"
@@ -11,7 +11,7 @@ export {
   email,
   notempty,
   nonumber,
-  specialchar,
+  nospecialchar,
   minlength,
   issamevalue,
   slug,

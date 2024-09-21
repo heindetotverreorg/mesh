@@ -93,6 +93,13 @@
         },
         {
           "component": "MeshInput",
+          "type":"text",
+          "id":"6",
+          "key":"specialchar",
+          "highlightValidation": true
+        },
+        {
+          "component": "MeshInput",
           "type":"email",
           "id":"2",
           "key":"email",
@@ -131,7 +138,7 @@
         {
           "component": "MeshInput",
           "type":"password",
-          "id":"1",
+          "id":"4",
           "key":"passwordCheck",
           "secondValidationValue": "password",
           "highlightValidation": true

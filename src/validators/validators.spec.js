@@ -3,7 +3,7 @@ import {
   nonumber,
   email,
   notempty,
-  specialchar,
+  nospecialchar,
   minlength,
   issamevalue,
   slug
@@ -31,9 +31,9 @@ describe('validators: utils/validators', () => {
     expect(notempty.validate(1)).toBe(true)
   })
 
-  it('should validate specialchar', () => {
-    expect(specialchar.validate('foo')).toBe(false)
-    expect(specialchar.validate('b@r')).toBe(true)
+  it('should validate nospecialchar', () => {
+    expect(nospecialchar.validate('foo')).toBe(false)
+    expect(nospecialchar.validate('b@r')).toBe(true)
   })
   
   it('should validate minlength', () => {
