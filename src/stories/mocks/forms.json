@@ -1,0 +1,269 @@
+{
+  "forms": {
+    "initial": {
+      "meta": {
+        "name":"initial",
+        "multipart":false
+      },
+      "fields":[
+        { 
+          "component":"MeshInput",
+          "type":"email",
+          "id":"0",
+          "key": "email",
+          "highlightValidation": true
+        },
+        {
+          "component": "MeshInput",
+          "type":"password",
+          "id":"1",
+          "key":"password",
+          "highlightValidation": true
+        },
+        {
+          "component":"MeshButton",
+          "type":"submit",
+          "id":"2",
+          "key":"loginButton"
+        }
+      ]
+    },
+    "prefilled": {
+      "meta": {
+        "name":"initial",
+        "multipart":false
+      },
+      "fields":[
+        { 
+          "default": "Matthias",
+          "component":"MeshInput",
+          "type":"text",
+          "id":"0",
+          "key": "firstName",
+          "required": true,
+          "highlightValidation": true
+        },
+        {
+          "default": "Poortvliet",
+          "component": "MeshInput",
+          "type":"text",
+          "id":"1",
+          "key":"lastName",
+          "required": true,
+          "highlightValidation": true
+        },
+        {
+          "default": "mathiaspoortvliet@",
+          "component": "MeshInput",
+          "type":"email",
+          "id":"2",
+          "key":"email",
+          "required": true,
+          "highlightValidation": true
+        },
+        {
+          "component":"MeshButton",
+          "id":"5",
+          "key":"registerButton",
+          "type":"button"
+        }
+      ]
+    },
+    "error": {
+      "meta": {
+        "name":"error",
+        "multipart":false
+      },
+      "fields":[
+        { 
+          "component":"MeshInput",
+          "type":"text",
+          "id":"0",
+          "key": "firstName",
+          "required": true,
+          "highlightValidation": true
+        },
+        {
+          "component": "MeshInput",
+          "type":"text",
+          "id":"1",
+          "key":"lastName",
+          "required": true,
+          "highlightValidation": true
+        },
+        {
+          "component": "MeshInput",
+          "type":"email",
+          "id":"2",
+          "key":"email",
+          "required": true,
+          "highlightValidation": true
+        },
+        {
+          "component":"MeshButton",
+          "id":"5",
+          "key":"registerButton",
+          "type":"button"
+        }
+      ]
+    },
+    "passwordCheck": {
+      "meta": {
+        "name":"error",
+        "multipart":false
+      },
+      "fields":[
+        {
+          "component": "MeshInput",
+          "type":"email",
+          "id":"2",
+          "key":"email",
+          "required": true,
+          "highlightValidation": true
+        },
+        {
+          "component": "MeshInput",
+          "type":"password",
+          "id":"1",
+          "key":"password",
+          "highlightValidation": true
+        },
+        {
+          "component": "MeshInput",
+          "type":"password",
+          "id":"1",
+          "key":"passwordCheck",
+          "secondValidationValue": "password",
+          "highlightValidation": true
+        },
+        {
+          "component":"MeshButton",
+          "id":"5",
+          "key":"registerButton",
+          "type":"button"
+        }
+      ]
+    },
+    "checkBox": {
+      "meta": {
+        "name":"checkbox",
+        "multipart":false
+      },
+      "fields":[
+        { 
+          "component":"MeshInput",
+          "autocomplete": "on",
+          "type":"text",
+          "id":"0",
+          "key": "firstName",
+          "required": true,
+          "highlightValidation": true
+        },
+        { 
+          "component":"MeshInput",
+          "type":"text",
+          "id":"1",
+          "key": "lastName",
+          "required": true,
+          "highlightValidation": true
+        },
+        { 
+          "component":"MeshInput",
+          "type":"checkbox",
+          "id":"2",
+          "key": "checkBox",
+          "required": false
+        },
+        {
+          "component":"MeshButton",
+          "id":"3",
+          "key":"formButton",
+          "type":"button"
+        }
+      ]
+    },
+    "select": {
+      "meta": {
+        "name":"select",
+        "multipart":false
+      },
+      "fields":[
+        { 
+          "component":"MeshInput",
+          "autocomplete": "on",
+          "type":"text",
+          "id":"0",
+          "key": "firstName",
+          "required": true,
+          "highlightValidation": true
+        },
+        { 
+          "component":"MeshInput",
+          "type":"text",
+          "id":"1",
+          "key": "lastName",
+          "required": true,
+          "highlightValidation": true
+        },
+        { 
+          "component":"MeshSelect",
+          "type":"select",
+          "id":"2",
+          "key": "select",
+          "options": [
+            "one",
+            "two",
+            "three"
+          ]
+        },
+        {
+          "component":"MeshButton",
+          "id":"3",
+          "key":"formButton",
+          "type":"button"
+        }
+      ]
+    },
+    "textarea": {
+      "meta": {
+        "name":"textarea",
+        "multipart":false
+      },
+      "fields":[
+        { 
+          "component":"MeshInput",
+          "autocomplete": "on",
+          "type":"text",
+          "id":"0",
+          "key": "firstName",
+          "required": true,
+          "highlightValidation": true
+        },
+        { 
+          "component":"MeshInput",
+          "type":"textarea",
+          "id":"1",
+          "key": "description",
+          "required": true,
+          "highlightValidation": true
+        },
+        { 
+          "component":"MeshSelect",
+          "type":"select",
+          "id":"2",
+          "key": "select",
+          "options": [
+            "one",
+            "two"
+          ]
+        },
+        {
+          "component":"MeshButton",
+          "id":"3",
+          "key":"formButton",
+          "type":"button"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "labels": {
+    "email": "Email",
+    "password": "Password",
+    "passwordCheck": "Password again",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "checkBox": "Checkbox",
+    "select": "Select a number",
+    "slug": "Enter a slug",
+    "loginButton": "Login",
+    "registerButton": "Register",
+    "formButton": "Submit"
+  },
+  "validators": {
+    "email": "email not valid",
+    "password": "password not valid",
+    "nonumber": "no numbers allowed",
+    "issamevalue": "must be same value",
+    "slug": "for a slug, only letters, numbers and dashes are allowed",
+    "default": "standard validation message"
+  },
+  "messages": {
+    "global-validation-message": "the following fields have an error: "
+  }
+}
