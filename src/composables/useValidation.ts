@@ -1,4 +1,4 @@
-import { ref, Ref, onMounted } from "vue"
+import { ref, Ref, onMounted, watch } from "vue"
 import { ValidationConfig, Validator } from "@/main"
 
 export const useValidation = (
@@ -6,7 +6,8 @@ export const useValidation = (
     currentValue : Ref,
     fieldValidators : Validator[],
     isRequired: boolean,
-    optionalSecondValidation? : Ref
+    optionalSecondValidation? : Ref,
+    key?: string
   },
   emit : Function
 ) => {
@@ -15,6 +16,11 @@ export const useValidation = (
   onMounted(() => {
     validate({ validateLoose: true })
   })
+
+  watch(() => currentValue.value, () => {
+    console.log('currentValue changed', config.key)
+    console.log(currentValue.value)
+  }, { immediate: true })
   
   const getValidationResults = ({ validateStrict, validateLoose, specificValue } : ValidationConfig) : { key : string }[] => {
     const test = fieldValidators.reduce((acc : { key : string }[], curr) => {
@@ -47,7 +53,7 @@ export const useValidation = (
     return (!getValidationResults({ validateStrict: true }).length)
   }
 
-  const validate = async ({ clearLooseValidation, clearStrictValidation, validateLoose, validateStrict, specificValue } : ValidationConfig) => {
+  const validate = async ({ clearLooseValidation, clearStrictValidation, validateLoose, validateStrict, specificValue } : ValidationConfig = {}) => {
     if (specificValue) {
       validationResult.value.messages = getValidationResults({ specificValue })
       validationResult.value.canSubmit = await isValid({ specificValue })

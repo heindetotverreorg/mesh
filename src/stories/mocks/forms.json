@@ -95,7 +95,7 @@
           "component": "MeshInput",
           "type":"text",
           "id":"6",
-          "key":"specialchar",
+          "key":"nospecialchar",
           "highlightValidation": true
         },
         {
@@ -216,7 +216,9 @@
           "component":"MeshSelect",
           "type":"select",
           "id":"2",
-          "key": "select",
+          "highlightValidation": true,
+          "key": "selectString",
+          "default": "two", 
           "options": [
             "one",
             "two",

@@ -55,17 +55,19 @@ import { useValidation } from '../../composables/useValidation'
   const classes = computed(() => [
     ...props.domclass,
     focus.value ? 'input--focus' : '',
+    validationResult.value.canSubmit && props.highlightValidation && currentValue.value ? 'input--validated' : ''
   ])
   const currentValue = computed({ 
-    get: () => props.modelValue, 
+    get: () => props.modelValue === undefined ? props.default : props.modelValue, 
     set: (value) => onInput(value)
   })
 
-  const { validate } = useValidation(
+  const { validate, validationResult } = useValidation(
     {
       currentValue: currentValue,
       fieldValidators: props.validators,
-      isRequired: props.required
+      isRequired: props.required,
+      key: props.name as string
     },
     emit
   )
@@ -94,4 +96,8 @@ select {
   outline: none;
   padding: calc(.5 * $margin) $margin;
 }
+
+.input--validated select {
+    border-color: green;
+  }
 </style>

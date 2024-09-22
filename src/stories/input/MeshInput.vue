@@ -29,7 +29,7 @@
       :required="required"
       @blur="onBlur"
       @focus="onFocus"
-      @input="validate({})"
+      @input="onInput"
       v-model="currentValue"
     />
     <p v-if="validationResult.messages.length" class="input__error">
@@ -63,7 +63,10 @@
   ])
   const currentValue = computed({ 
     get: () => props.modelValue !== undefined ? props.modelValue : props.default, 
-    set: (value) => [emit('update:modelValue', value), validate({})]
+    set: (value) => [
+      emit('update:modelValue', value),
+      validate()
+    ]
   })
   const secondValidationValue = computed(() => props.secondValidationValue)
   const textAreaValue = computed(() => currentValue.value as string)
@@ -73,7 +76,8 @@
       currentValue: currentValue,
       fieldValidators: props.validators,
       isRequired: props.required,
-      optionalSecondValidation: secondValidationValue
+      optionalSecondValidation: secondValidationValue,
+      key: props.name as string,
     },
     emit
   )
@@ -84,7 +88,7 @@
     }
   })
 
-  onBeforeMount(() => emit('update:modelValue', currentValue.value))
+  // onBeforeMount(() => emit('update:modelValue', currentValue.value))
 
   const onBlur = () => {
     focus.value = false
@@ -97,8 +101,10 @@
   }
 
   const onInput = (event : any) => {
-    emit('update:modelValue', event.target.value)
-    validate({})
+    if (props.type === 'textarea') {
+      emit('update:modelValue', event.target.value)
+    }
+    validate()
   }
 
 </script>

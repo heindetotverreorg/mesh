@@ -23,7 +23,7 @@ const getForm = (formKey, errorState) => {
       if (field.key === 'passwordCheck') {
         field.validators = [issamevalue, nonumber]
       }
-      if (field.key === 'specialchar') {
+      if (field.key === 'nospecialchar') {
         field.validators = [nospecialchar]
       }
       if (field.key === 'firstName' || field.key === 'lastName') {

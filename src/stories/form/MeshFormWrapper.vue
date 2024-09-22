@@ -10,6 +10,7 @@
     <template #fields="{ forceValidation, formValues, getSecondValdiationValue, onValidate, validationMessages }">
       <component
         v-for="field of formFields"
+        :key="`${field.key}_${field.id}`"
         :id="`${field.key}_${field.id}`"
         :is="field.component"
         class="m-t-1"
