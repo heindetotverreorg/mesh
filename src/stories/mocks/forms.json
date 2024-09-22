@@ -10,8 +10,7 @@
           "component":"MeshInput",
           "type":"email",
           "id":"0",
-          "key": "email",
-          "highlightValidation": true
+          "key": "email"
         },
         {
           "component": "MeshInput",

@@ -16,11 +16,6 @@ export const useValidation = (
   onMounted(() => {
     validate({ validateLoose: true })
   })
-
-  watch(() => currentValue.value, () => {
-    console.log('currentValue changed', config.key)
-    console.log(currentValue.value)
-  }, { immediate: true })
   
   const getValidationResults = ({ validateStrict, validateLoose, specificValue } : ValidationConfig) : { key : string }[] => {
     const test = fieldValidators.reduce((acc : { key : string }[], curr) => {

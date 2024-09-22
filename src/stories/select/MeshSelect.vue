@@ -98,6 +98,6 @@ select {
 }
 
 .input--validated select {
-    border-color: green;
-  }
+  border-color: green;
+}
 </style>

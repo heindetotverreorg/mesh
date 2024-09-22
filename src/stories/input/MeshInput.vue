@@ -59,10 +59,11 @@
     ...props.domclass,
     focus.value ? 'input--focus' : '',
     validationResult.value.messages.length ? 'input--error' : '',
-    validationResult.value.canSubmit && props.highlightValidation && currentValue.value ? 'input--validated' : ''
+    validationResult.value.canSubmit && props.highlightValidation && currentValue.value ? 'input--validated' : '',
+    validationResult.value.canSubmit === false && props.highlightValidation && currentValue.value ? 'input--warning' : ''
   ])
   const currentValue = computed({ 
-    get: () => props.modelValue !== undefined ? props.modelValue : props.default, 
+    get: () => props.modelValue !== undefined ? props.modelValue : props.default,
     set: (value) => [
       emit('update:modelValue', value),
       validate()
@@ -87,8 +88,6 @@
       validate(newVal)
     }
   })
-
-  // onBeforeMount(() => emit('update:modelValue', currentValue.value))
 
   const onBlur = () => {
     focus.value = false
@@ -124,6 +123,11 @@
 
   &__label {
     margin-bottom: calc(.5 * $margin);
+  }
+
+  &--warning input,
+  &--warning &__error {
+    border-color: orange;
   }
 
   &--error input,

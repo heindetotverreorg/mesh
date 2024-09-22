@@ -25,7 +25,7 @@
         :type="field.type"
         :validators="field.validators"
         v-model="formValues[field.key]"
-        @input="emitInput ? emit('input', formValues) : false"
+        @input="emit('input', formValues)"
         @validate="onValidate(field.key, $event)"
       >
         <template #label>{{ content('labels', field.key) }}</template>
@@ -73,10 +73,6 @@ import { Content, Form, ValidationConfig } from '../../types/forms'
     formValues: {
       type: Object,
       default: () => ({})
-    },
-    emitInput: {
-      type: Boolean,
-      default: false
     }
   })
 
